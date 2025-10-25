@@ -7,7 +7,7 @@
 *   **GUI Moderna:** Interfaz principal desarrollada con **PyQt5** que simula el estilo de diseño de **GitHub** y la estética de **Windows 11**, ofreciendo una experiencia de usuario limpia y accesible.
 *   **Descarga Eficiente:** Descarga directa de repositorios como archivos ZIP, con detección automática de ramas (`main` o `master`).
 *   **Gestión de Dependencias:** Detección y sugerencia de instalación de `requirements.txt` dentro del repositorio descargado.
-*   **CLI Opcional:** La versión de terminal mejorada (`gitdown_rich_cli.py`) sigue disponible para usuarios avanzados y automatización.
+*   **CLI Opcional:** La versión de terminal mejorada (`gitdown-term.py`) sigue disponible para usuarios avanzados y automatización.
 
 ## 💻 Instalación
 
@@ -20,7 +20,7 @@ pip install requests
 # Requisito principal para la GUI (gitdown.py)
 pip install PyQt5
 
-# Requisito opcional para la CLI mejorada (gitdown_rich_cli.py)
+# Requisito opcional para la CLI mejorada (gitdown-term.py)
 pip install rich
 ```
 
@@ -41,7 +41,7 @@ El archivo principal del proyecto, `gitdown.py`, ahora ejecuta la Interfaz Gráf
 Si prefiere la línea de comandos, puede usar la versión mejorada con `rich`:
 
 ```bash
-python gitdown_rich_cli.py --user <usuario-github> --repo <nombre-repositorio>
+python gitdown-term.py --user <usuario-github> --repo <nombre-repositorio>
 ```
 
 ## 📦 Estructura del Proyecto
@@ -49,8 +49,8 @@ python gitdown_rich_cli.py --user <usuario-github> --repo <nombre-repositorio>
 ```
 gitdown/
 ├── gitdown.py              # -> NUEVA GUI (Punto de entrada principal)
-├── gitdown_rich_cli.py     # -> CLI Mejorada (Respaldo/Opcional)
-├── gitdown_original_cli.py # -> CLI Original (Respaldo)
+├── gitdown-term.py         # -> CLI Mejorada (Terminal)
+
 ├── README.md               # Este archivo
 ├── CHANGELOG.md            # Historial de cambios
 └── ...                     # Otros archivos y carpetas

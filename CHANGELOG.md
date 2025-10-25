@@ -41,7 +41,7 @@ Esta es una actualización de mantenimiento para reorganizar la estructura de ar
 
 -   **Reorganización de Archivos:**
     -   El archivo `gitdown_gui.py` fue renombrado a `gitdown.py`, convirtiéndose en el punto de entrada principal del proyecto (GUI).
-    -   El archivo original `gitdown.py` fue renombrado a `gitdown_original_cli.py` (Respaldo).
-    -   La CLI mejorada `gitdown_cli.py` fue renombrada a `gitdown_rich_cli.py` (Respaldo/Opcional).
+    -   El archivo original `gitdown_original_cli.py` (antiguo `gitdown.py`) ha sido eliminado.
+    -   La CLI mejorada `gitdown_rich_cli.py` fue renombrada a `gitdown-term.py` (CLI de Terminal).
 -   **Documentación:** Se actualizó `README.md` y este `CHANGELOG.md` para reflejar la nueva estructura de archivos.
 
