@@ -31,3 +31,17 @@ Esta es una actualización mayor que introduce una interfaz gráfica y una versi
 
 -   Se mejoró la gestión de errores en la nueva CLI para proporcionar mensajes más claros al usuario en caso de fallos de red o de repositorio.
 
+
+
+## [2.0.1] - 2025-10-25
+
+Esta es una actualización de mantenimiento para reorganizar la estructura de archivos según la solicitud del usuario.
+
+### 🛠️ Mejoras
+
+-   **Reorganización de Archivos:**
+    -   El archivo `gitdown_gui.py` fue renombrado a `gitdown.py`, convirtiéndose en el punto de entrada principal del proyecto (GUI).
+    -   El archivo original `gitdown.py` fue renombrado a `gitdown_original_cli.py` (Respaldo).
+    -   La CLI mejorada `gitdown_cli.py` fue renombrada a `gitdown_rich_cli.py` (Respaldo/Opcional).
+-   **Documentación:** Se actualizó `README.md` y este `CHANGELOG.md` para reflejar la nueva estructura de archivos.
+
