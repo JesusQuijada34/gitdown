@@ -14,9 +14,9 @@ def c(text, color):  # color: "green", "yellow", "red", "blue"
 def get_downloads_dir():
     system = platform.system()
     if system == "Windows":
-        return os.path.join(os.environ["USERPROFILE"], "Downloads")
+        return os.path.join(os.environ.get("USERPROFILE", os.path.expanduser("~")), "Downloads")
     else:
-        return os.path.join(os.environ["HOME"], "Descargas")
+        return os.path.join(os.environ.get("HOME", os.path.expanduser("~")), "Descargas")
 
 def fancy_bar(duration=2.5):
     stages = ['-']
@@ -43,7 +43,7 @@ def download_repo_zip(user, repo):
     sys.exit(1)
 
 def extract_zip(zip_path, user, repo):
-    dest_dir = os.path.join(get_downloads_dir(), "GardenHouse Gits Downloader", f"{user}--{repo}")
+    dest_dir = os.path.join(get_downloads_dir(), "GitDown_Original", f"{user}--{repo}")
     os.makedirs(dest_dir, exist_ok=True)
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
         zip_ref.extractall(dest_dir)
@@ -71,13 +71,13 @@ def run_sensors(dest_dir):
 
 def main():
     parser = argparse.ArgumentParser(description="GitHub Downloader Terminal Help Usage")
-    parser.add_argument("--gitdown", required=True, help="Usuario GitHub")
+    parser.add_argument("--user", required=True, help="Usuario GitHub")
     parser.add_argument("--repo", required=True, help="Nombre del repositorio")
     args = parser.parse_args()
 
-    print(c(f"[SERVER] CHECK github/{args.gitdown}/{args.repo}", "blue"))
-    zip_path = download_repo_zip(args.gitdown, args.repo)
-    dest_dir = extract_zip(zip_path, args.gitdown, args.repo)
+    print(c(f"[SERVER] CHECK github/{args.user}/{args.repo}", "blue"))
+    zip_path = download_repo_zip(args.user, args.repo)
+    dest_dir = extract_zip(zip_path, args.user, args.repo)
     run_sensors(dest_dir)
     install_requirements(dest_dir)
     print(c("[SWIPPER] ¡DESCARGADO!", "green"))
